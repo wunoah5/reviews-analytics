@@ -15,9 +15,20 @@ for d in  data:
 print('留言總字數為', sum_len)    #印出總字數
 print('留言平均長度為', sum_len/len(data))    #總字數除以筆數就是留言的平均字數
 print('留言平均長度為', round(sum_len/len(data),2))    #round(a,b) 取a的資料四捨五入到小數第b位
+
 # 這邊在篩選留言字數小於100
+
 new = []   #建立一個新清單，用來裝過濾後的資料
 for d in data:
-	if len(d) < 100:    #如果留言字數小於100才裝進新清單
-		new.append(d)
+    if len(d) < 100:    #如果留言字數小於100才裝進新清單
+        new.append(d)
 print('一共有', len(new), '筆留言長度小於100')
+
+
+# 這邊在篩選特定文字
+good = []   #建立一個新清單，用來裝過濾後的資料
+for d in data:
+    if 'good' in d:    #如果留言字數小於100才裝進新清單
+        good.append(d)
+print('一共有', len(good), '筆留言提到good')
+print(good[0])
